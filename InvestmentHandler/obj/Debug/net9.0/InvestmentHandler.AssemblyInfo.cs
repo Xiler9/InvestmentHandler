@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InvestmentHandler")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1cbcba2f6718f04efd1dc7fca251e7f493ae585")]
 [assembly: System.Reflection.AssemblyProductAttribute("InvestmentHandler")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InvestmentHandler")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
