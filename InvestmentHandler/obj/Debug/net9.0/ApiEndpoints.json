@@ -1,0 +1,23 @@
+[
+  {
+    "ContainingType": "InvestmentHandler.Controllers.DataAcquisitionController",
+    "Method": "GetDataMarketPricesAsync",
+    "RelativePath": "api/GetDataMarketPricesAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "getDataMarketPricesRequest",
+        "Type": "InvestmentHandler.Models.GetDataMarketPricesRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "dataFormatOption",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
