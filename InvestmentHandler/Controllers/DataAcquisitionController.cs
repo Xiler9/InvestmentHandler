@@ -10,20 +10,20 @@ namespace InvestmentHandler.Controllers
     /// <summary>
     /// Controller for getting datas about instruments
     /// </summary>
-    public class DataAcquisitionController : ControllerBase
+    public class MarketDataReportController : ControllerBase
     {
         /// <summary>
         /// Services
         /// </summary>
-        private IGenerateRandomDataService _randomDataService;
-        private IDailyMarketDataHtmlStatisticsServcice _dailyMarketDataHtmlStatisticsServcice;
+        private readonly IGenerateRandomDataService _randomDataService;
+        private readonly IDailyMarketDataReportManagerService _dailyMarketDataHtmlStatisticsServcice;
 
         /// <summary>
         /// Implement DI
         /// </summary>
         /// <param name="randomDataService"></param>
         /// <param name="dailyMarketDataHtmlStatisticsServcice"></param>
-        public DataAcquisitionController(IGenerateRandomDataService randomDataService, IDailyMarketDataHtmlStatisticsServcice dailyMarketDataHtmlStatisticsServcice)
+        public MarketDataReportController(IGenerateRandomDataService randomDataService, IDailyMarketDataReportManagerService dailyMarketDataHtmlStatisticsServcice)
         {
             _randomDataService = randomDataService;
             _dailyMarketDataHtmlStatisticsServcice = dailyMarketDataHtmlStatisticsServcice;
@@ -32,14 +32,12 @@ namespace InvestmentHandler.Controllers
         /// <summary>
         /// Get information about instrument
         /// </summary>
-        /// <param name="getDataMarketPricesRequest"></param>
-        /// <param name="_randomDataService"></param>
-        /// <returns></returns>
+        /// <param name="getDataMarketPricesRequest"> Request params </param>
+        /// <returns> Returns report </returns>
         [HttpPost("GetDataMarketPricesAsync")]
-        public async Task<IActionResult> GetDataMarketPricesAsync([FromBody] GetDataMarketPricesRequest getDataMarketPricesRequest, [FromQuery] DataFormatOptions dataFormatOption)
+        public async Task<IActionResult> GetMarketDataPricesAsync([FromBody] GetDataMarketPricesRequest getDataMarketPricesRequest, [FromQuery] DataFormatOptions dataFormatOption)
         {
-            List<DailyMarketData> dailyMarketDatas = new List<DailyMarketData>();
-            dailyMarketDatas = await _randomDataService.GenerateRandomData(getDataMarketPricesRequest.dataMarketRequests);
+            var dailyMarketDatas = await _randomDataService.GenerateRandomData(getDataMarketPricesRequest.dataMarketRequests);
             return Ok(_dailyMarketDataHtmlStatisticsServcice.GetDailyMarketDataPriceChangeStatistics(dailyMarketDatas, dataFormatOption));
         }
     }

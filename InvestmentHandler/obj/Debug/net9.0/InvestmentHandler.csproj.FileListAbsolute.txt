@@ -32,3 +32,4 @@ C:\Users\innok\source\repos\InvestmentHandler\InvestmentHandler\obj\Debug\net9.0
 C:\Users\innok\source\repos\InvestmentHandler\InvestmentHandler\obj\Debug\net9.0\InvestmentHandler.genruntimeconfig.cache
 C:\Users\innok\source\repos\InvestmentHandler\InvestmentHandler\obj\Debug\net9.0\ref\InvestmentHandler.dll
 C:\Users\innok\source\repos\InvestmentHandler\InvestmentHandler\obj\Debug\net9.0\InvestmentHandler.sourcelink.json
+C:\Users\innok\source\repos\InvestmentHandler\InvestmentHandler\obj\Debug\net9.0\swae.build.ex.cache

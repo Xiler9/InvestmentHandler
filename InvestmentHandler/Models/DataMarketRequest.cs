@@ -5,7 +5,7 @@
     /// </summary>
     public record DataMarketRequest
     {
-        public string InstrumentCode { get; init; }
+        public string InstrumentCode { get; init; } = null!;
         public int DaysCount { get; init; }
     }
 }

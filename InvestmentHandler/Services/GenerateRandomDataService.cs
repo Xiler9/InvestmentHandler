@@ -18,16 +18,20 @@ namespace InvestmentHandler.Services
             List<DailyMarketData> dailyMarketDatas = new List<DailyMarketData>();
             int randomPrice = 0;
             Random random = new Random();
-            for (int i = 0; i < dataMarketRequests.Count; i++)
+            for (int i = 0;  i < dataMarketRequests.Count; i++)
             {
-                await Task.Delay(10);
-                randomPrice = random.Next(1, 200);
-                dailyMarketDatas.Add(new DailyMarketData
+                //Calcell Token
+                await Task.Delay(1000);
+                for (int j = 0; j < dataMarketRequests[i].DaysCount; j++)
+                {
+                    randomPrice = random.Next(1, 200);
+                    dailyMarketDatas.Add(new DailyMarketData
                     (
                     dataMarketRequests[i].InstrumentCode,
-                    DateTime.Today.AddDays(-dataMarketRequests[i].DaysCount),
+                    DateTime.Today.AddDays(-j),
                     randomPrice
                     ));
+                }
             }
             return dailyMarketDatas;
         }

@@ -6,11 +6,11 @@ builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
 
-/// <summary>
-/// Implement DI
-/// </summary>
+//Add DI
 builder.Services.AddSingleton<IGenerateRandomDataService, GenerateRandomDataService>();
-builder.Services.AddSingleton<IDailyMarketDataHtmlStatisticsServcice, DailyMarketDataHtmlStatisticsServcice>();
+builder.Services.AddSingleton<IDailyMarketDataReportService, DailyMarketDataStatisticsHTMLService>();
+builder.Services.AddSingleton<IDailyMarketDataReportService, DailyMarketDataStatisticsXMLService>();
+builder.Services.AddSingleton<IDailyMarketDataReportManagerService, DailyMarketDataReportManagerService>();
 
 var app = builder.Build();
 

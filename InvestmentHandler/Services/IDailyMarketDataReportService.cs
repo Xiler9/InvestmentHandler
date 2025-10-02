@@ -6,8 +6,9 @@ namespace InvestmentHandler.Services
     /// <summary>
     /// Interface for DailyMarketDataHtmlStatisticsServcice
     /// </summary>
-    public interface IDailyMarketDataHtmlStatisticsServcice
+    public interface IDailyMarketDataReportService
     {
-        public string GetDailyMarketDataPriceChangeStatistics(List<DailyMarketData> datas, DataFormatOptions dataFormatOption);
+        public DataFormatOptions FormatOptions { get; set; }
+        public string GetDailyMarketDataPriceChangeStatistics(List<DailyMarketData> datas);
     }
 }

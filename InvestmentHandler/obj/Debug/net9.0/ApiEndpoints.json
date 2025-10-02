@@ -1,7 +1,7 @@
 [
   {
-    "ContainingType": "InvestmentHandler.Controllers.DataAcquisitionController",
-    "Method": "GetDataMarketPricesAsync",
+    "ContainingType": "InvestmentHandler.Controllers.MarketDataReportController",
+    "Method": "GetMarketDataPricesAsync",
     "RelativePath": "api/GetDataMarketPricesAsync",
     "HttpMethod": "POST",
     "IsController": true,
