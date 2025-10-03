@@ -4,35 +4,42 @@ namespace InvestmentHandler.Services
 {
 
     /// <summary>
-    /// Service for Generating Random Data Services
+    /// Service for Generating Random Datas
     /// </summary>
     public class GenerateRandomDataService : IGenerateRandomDataService
     {
         /// <summary>
-        /// Generate Random data, current price stay between 1 and 200 
+        /// Generate Random data
         /// </summary>
         /// <param name="dataMarketRequests"></param>
-        /// <returns></returns>
-        public async Task<List<DailyMarketData>> GenerateRandomData(List<DataMarketRequest> dataMarketRequests)
+        /// <returns> Generated datas </returns>
+        public async Task<List<DailyMarketData>> GenerateRandomData(List<DataMarketRequest> dataMarketRequests, CancellationToken cancellationToken)
         {
             List<DailyMarketData> dailyMarketDatas = new List<DailyMarketData>();
             int randomPrice = 0;
             Random random = new Random();
+
             for (int i = 0;  i < dataMarketRequests.Count; i++)
             {
-                //Calcell Token
-                await Task.Delay(1000);
+                cancellationToken.ThrowIfCancellationRequested();
+
+                // Wait 10 seconds with support for cancellation
+                await Task.Delay(10000, cancellationToken);
+
                 for (int j = 0; j < dataMarketRequests[i].DaysCount; j++)
                 {
+                    cancellationToken.ThrowIfCancellationRequested();
+
                     randomPrice = random.Next(1, 200);
-                    dailyMarketDatas.Add(new DailyMarketData
-                    (
-                    dataMarketRequests[i].InstrumentCode,
-                    DateTime.Today.AddDays(-j),
-                    randomPrice
+
+                    dailyMarketDatas.Add(new DailyMarketData(
+                        dataMarketRequests[i].InstrumentCode,
+                        DateTime.Today.AddDays(-j),
+                        randomPrice
                     ));
                 }
             }
+
             return dailyMarketDatas;
         }
     }

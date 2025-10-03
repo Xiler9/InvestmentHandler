@@ -1,88 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\innok\\source\\repos\\InvestmentHandler\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{BFA4D70D-FB6A-4F0D-AB47-2D9921F42C97}|InvestmentHandler\\InvestmentHandler.csproj|c:\\users\\innok\\source\\repos\\investmenthandler\\investmenthandler\\services\\dailymarketdatastatisticshtmlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BFA4D70D-FB6A-4F0D-AB47-2D9921F42C97}|InvestmentHandler\\InvestmentHandler.csproj|solutionrelative:investmenthandler\\services\\dailymarketdatastatisticshtmlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BFA4D70D-FB6A-4F0D-AB47-2D9921F42C97}|InvestmentHandler\\InvestmentHandler.csproj|c:\\users\\innok\\source\\repos\\investmenthandler\\investmenthandler\\services\\dailymarketdatastatisticsxmlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BFA4D70D-FB6A-4F0D-AB47-2D9921F42C97}|InvestmentHandler\\InvestmentHandler.csproj|solutionrelative:investmenthandler\\services\\dailymarketdatastatisticsxmlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BFA4D70D-FB6A-4F0D-AB47-2D9921F42C97}|InvestmentHandler\\InvestmentHandler.csproj|c:\\users\\innok\\source\\repos\\investmenthandler\\investmenthandler\\services\\generaterandomdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BFA4D70D-FB6A-4F0D-AB47-2D9921F42C97}|InvestmentHandler\\InvestmentHandler.csproj|solutionrelative:investmenthandler\\services\\generaterandomdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BFA4D70D-FB6A-4F0D-AB47-2D9921F42C97}|InvestmentHandler\\InvestmentHandler.csproj|c:\\users\\innok\\source\\repos\\investmenthandler\\investmenthandler\\controllers\\dataacquisitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BFA4D70D-FB6A-4F0D-AB47-2D9921F42C97}|InvestmentHandler\\InvestmentHandler.csproj|solutionrelative:investmenthandler\\controllers\\dataacquisitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GenerateRandomDataService.cs",
-              "DocumentMoniker": "C:\\Users\\innok\\source\\repos\\InvestmentHandler\\InvestmentHandler\\Services\\GenerateRandomDataService.cs",
-              "RelativeDocumentMoniker": "InvestmentHandler\\Services\\GenerateRandomDataService.cs",
-              "ToolTip": "C:\\Users\\innok\\source\\repos\\InvestmentHandler\\InvestmentHandler\\Services\\GenerateRandomDataService.cs",
-              "RelativeToolTip": "InvestmentHandler\\Services\\GenerateRandomDataService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:34:42.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DailyMarketDataStatisticsHTMLService.cs",
-              "DocumentMoniker": "C:\\Users\\innok\\source\\repos\\InvestmentHandler\\InvestmentHandler\\Services\\DailyMarketDataStatisticsHTMLService.cs",
-              "RelativeDocumentMoniker": "InvestmentHandler\\Services\\DailyMarketDataStatisticsHTMLService.cs",
-              "ToolTip": "C:\\Users\\innok\\source\\repos\\InvestmentHandler\\InvestmentHandler\\Services\\DailyMarketDataStatisticsHTMLService.cs*",
-              "RelativeToolTip": "InvestmentHandler\\Services\\DailyMarketDataStatisticsHTMLService.cs*",
-              "ViewState": "AgIAABAAAAAAAAAAAAAIwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T16:50:08.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DailyMarketDataStatisticsXMLService.cs",
-              "DocumentMoniker": "C:\\Users\\innok\\source\\repos\\InvestmentHandler\\InvestmentHandler\\Services\\DailyMarketDataStatisticsXMLService.cs",
-              "RelativeDocumentMoniker": "InvestmentHandler\\Services\\DailyMarketDataStatisticsXMLService.cs",
-              "ToolTip": "C:\\Users\\innok\\source\\repos\\InvestmentHandler\\InvestmentHandler\\Services\\DailyMarketDataStatisticsXMLService.cs",
-              "RelativeToolTip": "InvestmentHandler\\Services\\DailyMarketDataStatisticsXMLService.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAUwDsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T16:50:08.347Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DataAcquisitionController.cs",
-              "DocumentMoniker": "C:\\Users\\innok\\source\\repos\\InvestmentHandler\\InvestmentHandler\\Controllers\\DataAcquisitionController.cs",
-              "RelativeDocumentMoniker": "InvestmentHandler\\Controllers\\DataAcquisitionController.cs",
-              "ToolTip": "C:\\Users\\innok\\source\\repos\\InvestmentHandler\\InvestmentHandler\\Controllers\\DataAcquisitionController.cs",
-              "RelativeToolTip": "InvestmentHandler\\Controllers\\DataAcquisitionController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:01:45.557Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

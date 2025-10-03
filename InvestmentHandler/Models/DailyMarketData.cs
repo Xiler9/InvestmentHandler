@@ -5,10 +5,6 @@
     /// </summary>
     public record DailyMarketData
     {
-        /// <summary>
-        /// 1234
-        /// </summary>
-        /// <example> Gasb </example>
         public string InstrumentCode { get; init; }
         public DateTime Date { get; init; }
         public decimal Price { get; init; }

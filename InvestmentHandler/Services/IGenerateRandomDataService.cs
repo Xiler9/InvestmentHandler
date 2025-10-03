@@ -7,6 +7,6 @@ namespace InvestmentHandler.Services
     /// </summary>
     public interface IGenerateRandomDataService
     {
-        public Task<List<DailyMarketData>> GenerateRandomData(List<DataMarketRequest> dataMarketRequests);
+        public Task<List<DailyMarketData>> GenerateRandomData(List<DataMarketRequest> dataMarketRequests, CancellationToken cancellationToken);
     }
 }

@@ -12,18 +12,12 @@ namespace InvestmentHandler.Controllers
     /// </summary>
     public class MarketDataReportController : ControllerBase
     {
-        /// <summary>
-        /// Services
-        /// </summary>
         private readonly IGenerateRandomDataService _randomDataService;
         private readonly IDailyMarketDataReportManagerService _dailyMarketDataHtmlStatisticsServcice;
 
-        /// <summary>
-        /// Implement DI
-        /// </summary>
-        /// <param name="randomDataService"></param>
-        /// <param name="dailyMarketDataHtmlStatisticsServcice"></param>
-        public MarketDataReportController(IGenerateRandomDataService randomDataService, IDailyMarketDataReportManagerService dailyMarketDataHtmlStatisticsServcice)
+        public MarketDataReportController(
+            IGenerateRandomDataService randomDataService,
+            IDailyMarketDataReportManagerService dailyMarketDataHtmlStatisticsServcice)
         {
             _randomDataService = randomDataService;
             _dailyMarketDataHtmlStatisticsServcice = dailyMarketDataHtmlStatisticsServcice;
@@ -33,12 +27,27 @@ namespace InvestmentHandler.Controllers
         /// Get information about instrument
         /// </summary>
         /// <param name="getDataMarketPricesRequest"> Request params </param>
+        /// <param name="dataFormatOption"> Format option (HTML, JSON, etc) </param>
+        /// <param name="cancellationToken"> Cancellation token from client </param>
         /// <returns> Returns report </returns>
         [HttpPost("GetDataMarketPricesAsync")]
-        public async Task<IActionResult> GetMarketDataPricesAsync([FromBody] GetDataMarketPricesRequest getDataMarketPricesRequest, [FromQuery] DataFormatOptions dataFormatOption)
+        public async Task<IActionResult> GetMarketDataPricesAsync(
+            [FromBody] GetDataMarketPricesRequest getDataMarketPricesRequest,
+            [FromQuery] DataFormatOptions dataFormatOption,
+            CancellationToken cancellationToken)
         {
-            var dailyMarketDatas = await _randomDataService.GenerateRandomData(getDataMarketPricesRequest.dataMarketRequests);
-            return Ok(_dailyMarketDataHtmlStatisticsServcice.GetDailyMarketDataPriceChangeStatistics(dailyMarketDatas, dataFormatOption));
+            try
+            {
+                // Generate data with cancellation support
+                var dailyMarketDatas = await _randomDataService.GenerateRandomData(getDataMarketPricesRequest.dataMarketRequests, cancellationToken);
+
+                // Return report
+                return Ok(_dailyMarketDataHtmlStatisticsServcice.GetDailyMarketDataPriceChangeStatistics(dailyMarketDatas, dataFormatOption));
+            }
+            catch (OperationCanceledException)
+            {
+                return StatusCode(499, "Клиент отменил запрос.");
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace InvestmentHandler.Models
 {
     /// <summary>
-    /// Element etting datas
+    /// Element getting datas
     /// </summary>
     public record DataMarketRequest
     {

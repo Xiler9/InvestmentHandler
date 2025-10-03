@@ -4,7 +4,7 @@ using InvestmentHandler.Models;
 namespace InvestmentHandler.Services
 {
     /// <summary>
-    /// Interface for DailyMarketDataHtmlStatisticsServcice
+    /// Interface for every text format
     /// </summary>
     public interface IDailyMarketDataReportService
     {

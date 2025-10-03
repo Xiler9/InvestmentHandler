@@ -7,6 +7,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 //Add DI
+
 builder.Services.AddSingleton<IGenerateRandomDataService, GenerateRandomDataService>();
 builder.Services.AddSingleton<IDailyMarketDataReportService, DailyMarketDataStatisticsHTMLService>();
 builder.Services.AddSingleton<IDailyMarketDataReportService, DailyMarketDataStatisticsXMLService>();
