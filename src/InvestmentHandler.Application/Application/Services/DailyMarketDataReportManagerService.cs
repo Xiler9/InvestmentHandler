@@ -1,0 +1,33 @@
+﻿using Application.Interfaces;
+using Domain.Enumerators;
+using Domain.Models;
+using Microsoft.Extensions.Logging;
+
+namespace Application.Services
+{
+    /// <summary>
+    /// Service for Translating To HTML or XML
+    /// </summary>
+    public class DailyMarketDataReportManagerService : IDailyMarketDataReportManagerService
+    {
+        //Список доступных форматов
+        private readonly List<IDailyMarketDataReportService> _dailyMarketDataReportServices = new List<IDailyMarketDataReportService>();
+
+        private readonly ILogger<DailyMarketDataReportManagerService> _logger;
+
+        public DailyMarketDataReportManagerService(IEnumerable<IDailyMarketDataReportService> dailyMarketDataReportServices, ILogger<DailyMarketDataReportManagerService> logger)
+        {
+            _dailyMarketDataReportServices.AddRange(dailyMarketDataReportServices);
+            _logger = logger;
+        }
+
+        /// <summary>
+        /// Fill information about instrument
+        /// </summary>
+        /// <param name="datas"> Generetaed datas </param>
+        /// <param name="dataFormatOptions"> Text format </param>
+        /// <returns></returns>
+        public string GetDailyMarketDataPriceChangeStatistics(List<DailyMarketData> datas, DataFormatOptions dataFormatOptions) =>
+            _dailyMarketDataReportServices.Find(x => x.FormatOptions == dataFormatOptions).GetDailyMarketDataPriceChangeStatistics(datas);
+    }
+}
