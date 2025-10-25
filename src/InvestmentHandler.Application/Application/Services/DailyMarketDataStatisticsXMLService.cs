@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Application.Repositories;
 using Domain.Enumerators;
 using Domain.Models;
 using System.Text;
@@ -6,11 +7,18 @@ using System.Text;
 namespace Application.Services
 {
     /// <summary>
-    /// Generate datas by XML
+    /// Get datas for XML
     /// </summary>
     public class DailyMarketDataStatisticsXMLService : IDailyMarketDataReportService
     {
+        private readonly IDailyMarketDatasRepositorie _dailyMarketDatasRepositorie;
+
         public DataFormatOptions FormatOptions { get; set; } = DataFormatOptions.XML;
+
+        public DailyMarketDataStatisticsXMLService(IDailyMarketDatasRepositorie dailyMarketDatasRepositorie)
+        {
+            _dailyMarketDatasRepositorie = dailyMarketDatasRepositorie;
+        }
 
         public string GetDailyMarketDataPriceChangeStatistics(List<DailyMarketData> datas)
         {

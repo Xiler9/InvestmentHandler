@@ -8,14 +8,14 @@ namespace Application.Services
     /// <summary>
     /// Service for Translating To HTML or XML
     /// </summary>
-    public class DailyMarketDataReportManagerService : IDailyMarketDataReportManagerService
+    public class IdentifyFormatOptionService : IIdentifyFormatOptionService
     {
         //Список доступных форматов
         private readonly List<IDailyMarketDataReportService> _dailyMarketDataReportServices = new List<IDailyMarketDataReportService>();
 
-        private readonly ILogger<DailyMarketDataReportManagerService> _logger;
+        private readonly ILogger<IdentifyFormatOptionService> _logger;
 
-        public DailyMarketDataReportManagerService(IEnumerable<IDailyMarketDataReportService> dailyMarketDataReportServices, ILogger<DailyMarketDataReportManagerService> logger)
+        public IdentifyFormatOptionService(IEnumerable<IDailyMarketDataReportService> dailyMarketDataReportServices, ILogger<IdentifyFormatOptionService> logger)
         {
             _dailyMarketDataReportServices.AddRange(dailyMarketDataReportServices);
             _logger = logger;

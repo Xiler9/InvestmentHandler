@@ -1,5 +1,7 @@
 using Application.Interfaces;
+using Application.Repositories;
 using Application.Services;
+using Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +12,11 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 //Add DI
-builder.Services.AddSingleton<IGenerateRandomDataService, GenerateRandomDataService>();
-builder.Services.AddSingleton<IDailyMarketDataReportService, DailyMarketDataStatisticsHTMLService>();
-builder.Services.AddSingleton<IDailyMarketDataReportService, DailyMarketDataStatisticsXMLService>();
-builder.Services.AddSingleton<IDailyMarketDataReportManagerService, DailyMarketDataReportManagerService>();
+builder.Services.AddScoped<IDailyMarketDataReportService, DailyMarketDataStatisticsHTMLService>();
+builder.Services.AddScoped<IDailyMarketDataReportService, DailyMarketDataStatisticsXMLService>();
+builder.Services.AddScoped<IIdentifyFormatOptionService, IdentifyFormatOptionService>();
+builder.Services.AddSingleton<IDailyMarketDatasRepositorie, DailyMarketDatasRepositorie>();
+
 
 var app = builder.Build();
 

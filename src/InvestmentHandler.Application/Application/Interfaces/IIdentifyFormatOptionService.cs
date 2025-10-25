@@ -6,8 +6,8 @@ namespace Application.Interfaces
     /// <summary>
     /// interface for DailyMarketDataReportManagerService
     /// </summary>
-    public interface IDailyMarketDataReportManagerService
+    public interface IIdentifyFormatOptionService
     {
-        public string GetDailyMarketDataPriceChangeStatistics(List<DailyMarketData> datas, DataFormatOptions dataFormatOptions);
+        public string GetDailyMarketDataPriceChangeStatistics(List<DailyMarketData> datas, DataFormatOptions dataFormatOption);
     }
 }

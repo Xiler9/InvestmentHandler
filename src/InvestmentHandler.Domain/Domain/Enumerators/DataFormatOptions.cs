@@ -5,13 +5,7 @@
     /// </summary>
     public enum DataFormatOptions
     {
-        /// <summary>
-        /// HTML format
-        /// </summary>
         HTML,
-        /// <summary>
-        /// XML format
-        /// </summary>
         XML
     }
 }

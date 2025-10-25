@@ -5,7 +5,7 @@ namespace Application.DTOs_for_requests
     /// <summary>
     /// Record for getting data from server
     /// </summary>
-    public record GetDataMarketPricesRequest
+    public record GetDataMarketPricesAsyncRequest
     {
         public List<DataMarketRequest> dataMarketRequests { get; init; } = new List<DataMarketRequest>();
     }

@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\InvestmentHandler.Application\Application\Application.csproj" />
+    <ProjectReference Include="..\..\InvestmentHandler.Domain\Domain\Domain.csproj" />
+  </ItemGroup>
+
 </Project>

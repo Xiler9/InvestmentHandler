@@ -14,10 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\InvestmentHandler.Application\Application\Application.csproj" />
     <ProjectReference Include="..\..\InvestmentHandler.Domain\Domain\Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\InvestmentHandler.Infrastructure\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
