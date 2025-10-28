@@ -1,8 +1,8 @@
 ﻿using Application.DTOs.Requests;
 using Application.DTOs_for_requests;
-using Application.Interfaces;
+using Application.Interfaces.ForRepositories;
+using Application.Interfaces.ForServices;
 using Application.Models.DTOs_for_requests;
-using Application.Repositories;
 using Domain.Models;
 
 namespace Application.Services
@@ -20,7 +20,7 @@ namespace Application.Services
             GetMarketDataPricesForCertainTimeAsyncRequest getMarketDataPricesForCertainTimeRequest) => 
             _dailyMarketDatasRepositorie.DailyMarketDatas
             .Where(x => x.InstrumentCode == getMarketDataPricesForCertainTimeRequest.InstrumentName 
-            && x.Date.Hour == getMarketDataPricesForCertainTimeRequest.dateTime.Hour 
+            && x.Date.Hour == getMarketDataPricesForCertainTimeRequest.DateTime.Hour 
             && x.Date.Day == 1)
             .ToList();
 

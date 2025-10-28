@@ -1,4 +1,4 @@
-﻿using Application.Repositories;
+﻿using Application.Interfaces.ForRepositories;
 using Domain.Models;
 
 namespace Infrastructure.Repositories
@@ -14,29 +14,39 @@ namespace Infrastructure.Repositories
 
         private void CreateDailyMarketDatas()
         {
-            var daysCount = 365 * 24 * 20;
-            var todayData = new List<DailyMarketData>()
+            var hoursCount = 365 * 24 * 20;
+
+            var baseData = new List<DailyMarketData>
             {
-                new("GAZP", DateTime.Today, 120),
-                new("BTC", DateTime.Today, 9_663_000),
-                new("USD", DateTime.Today, 91.1m)
+                new("GAZP", DateTime.Now, 120),
+                new("BTC", DateTime.Now, 9_663_000),
+                new("USD", DateTime.Now, 91.1m)
             };
 
-            var dailyData = new List<DailyMarketData>(daysCount * todayData.Count);
-            var dailyMaxPercentChange = 5;
+            DailyMarketDatas = new List<DailyMarketData>(hoursCount * baseData.Count);
 
+            var dailyMaxPercentChange = 5;
             var random = new Random();
 
-            foreach (var data in todayData)
+            foreach (var data in baseData)
             {
                 var lastPrice = data.Price;
-                for (int i = 0; i < daysCount; i++)
+                var currentDateTime = DateTime.Now;
+
+                for (int i = 0; i < hoursCount; i++)
                 {
-                    var currentDate = RoundToHour(DateTime.Today.AddDays(i));
-                    dailyData.Add(new DailyMarketData(data.InstrumentCode, currentDate, lastPrice));
+                    currentDateTime = RoundToHour(currentDateTime);
+
+                    DailyMarketDatas.Add(new DailyMarketData(
+                        data.InstrumentCode,
+                        currentDateTime,
+                        lastPrice
+                    ));
 
                     var percentChange = random.Next(dailyMaxPercentChange * 2) - dailyMaxPercentChange;
                     lastPrice = Math.Round(lastPrice * (1m + percentChange / 100m), 2);
+
+                    currentDateTime = currentDateTime.AddHours(-1);
                 }
             }
         }
@@ -51,5 +61,6 @@ namespace Infrastructure.Repositories
                 0,
                 0);
         }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Application.DTOs.Requests;
 using Application.DTOs_for_requests;
-using Application.Interfaces;
+using Application.Interfaces.ForServices;
 using Domain.Enumerators;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;

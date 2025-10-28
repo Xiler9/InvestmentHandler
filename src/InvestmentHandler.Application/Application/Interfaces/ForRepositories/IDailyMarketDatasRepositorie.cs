@@ -1,6 +1,6 @@
 ﻿using Domain.Models;
 
-namespace Application.Repositories
+namespace Application.Interfaces.ForRepositories
 {
     public interface IDailyMarketDatasRepositorie
     {

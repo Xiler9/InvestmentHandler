@@ -2,7 +2,7 @@
 using Application.DTOs_for_requests;
 using Domain.Models;
 
-namespace Application.Interfaces
+namespace Application.Interfaces.ForServices
 {
     public interface IGetDatasForCertainTimeService
     {

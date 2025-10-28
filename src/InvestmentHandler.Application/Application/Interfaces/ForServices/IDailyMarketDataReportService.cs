@@ -1,7 +1,7 @@
 ﻿using Domain.Enumerators;
 using Domain.Models;
 
-namespace Application.Interfaces
+namespace Application.Interfaces.ForServices
 {
     /// <summary>
     /// Interface for every text format

@@ -1,5 +1,5 @@
-﻿using Application.Interfaces;
-using Application.Repositories;
+﻿using Application.Interfaces.ForRepositories;
+using Application.Interfaces.ForServices;
 using Domain.Enumerators;
 using Domain.Models;
 using System.Text;
