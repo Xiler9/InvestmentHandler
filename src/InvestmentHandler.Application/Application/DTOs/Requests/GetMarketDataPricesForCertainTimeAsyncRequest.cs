@@ -2,7 +2,7 @@
 {
     public record GetMarketDataPricesForCertainTimeAsyncRequest
     {
-        public string InstrumentName { get; init; };
+        public string InstrumentName { get; init; }
         public DateTime DateTime { get; init; }
     }
 }
